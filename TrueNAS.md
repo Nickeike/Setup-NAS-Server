@@ -66,13 +66,14 @@ Når dette er gjort, skal alt fungere som forventa.
 Når du opnar **Datasets** for første gong, må du **lage ein Pool**. 
 
 ### **Lage ein Pool**
+#### TrueNAS Bruker RAIDZ metoden. for å velge rett RAIDZ, så har dei ein egen guide på selve oppsettet
 1. **Vel eit namn** for poolen (utan mellomrom).
 2. **Vel lagringsmetode**:
-   - **Mirroring (RAID 1)** – Beskyttar mot diskfeil, men dobler ikkje lagringskapasiteten.
+   - **Mirroring (RAID 1)** – Beskyttar mot diskfeil, men halverer lagringskapasiteten.
    - **Stripe (RAID 0)** – Maksimerer lagring, men ingen redundans.
-   - **RAID 4** – Dedikert paritetsdisk gir betre feiltoleranse enn RAID 0.
-   - **RAID 5** – Spreier paritet over fleire diskar, balansert mellom lagring og feiltoleranse.
-   - **RAID 6** – Spreier paritet over **to** diskar, slik at systemet kan tåle opptil **to feilande diskar**.
+   - **RAID 4** – Dedikert paritetsdisk gir betre feiltoleranse enn RAID 0. den er ikkje støtta av TrueNAS
+   - **RAID 5 (RAIDZ 1)** – Spreier paritet over fleire diskar, balansert mellom lagring og feiltoleranse.
+   - **RAID 6 (RAIDZ 2)** – Spreier paritet over **to** diskar, slik at systemet kan tåle opptil **to feilande diskar**.
    - Der det står *optional*, treng du ikkje å legge det inn – det er berre for lagring av loggfiler til ulike formål. I framtida kan det likevel vere lurt å legge til fleire diskar som er dedikert til spesifike oppgåver, som lagring av systeminformasjon.
 
 ---
